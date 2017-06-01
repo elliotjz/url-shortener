@@ -2,9 +2,12 @@
   "name": "url-shortener",
   "version": "1.0.0",
   "description": "freeCodeCamp API project",
+  "engines": {
+    "node": "7.8.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/elliotjz/url-shortener/issues"
   },
-  "homepage": "https://github.com/elliotjz/url-shortener#readme"
+  "homepage": "https://github.com/elliotjz/url-shortener#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  }
 }
