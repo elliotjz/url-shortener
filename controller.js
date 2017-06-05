@@ -20,7 +20,9 @@ module.exports = function(app) {
 
 	app.get('/new/*', function(req, res) {
 		let url = req.url.slice(5);
-		console.log(url);
+		console.log('');
+		console.log(req.originalUrl);
+		console.log('');
 		let result;
 
 		if (url.match(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/)) {
@@ -55,7 +57,7 @@ module.exports = function(app) {
 
 		let urlDoc = UrlModel.findOne({short_url: req.url.slice(1)}, function(err, data) {
 			if (err) throw err;
-			if (data) {
+			if (data && data.original_url !== "counter") {
 				let url = data.original_url;
 				res.redirect(url);
 			} else {
