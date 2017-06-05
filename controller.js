@@ -28,7 +28,7 @@ module.exports = function(app) {
 				if (err) throw err;
 				let count = data.short_url;
 
-				let newUrl = { original_url: url, short_url: req.originalUrl + count};
+				let newUrl = { original_url: url, short_url: "https://elliotjz-url-shortener.herokuapp.com/" + count};
 				let newUrlDoc = UrlModel(newUrl).save(function(err, data) {
 					if (err) throw err;
 					res.json(newUrl);
