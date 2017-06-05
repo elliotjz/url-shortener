@@ -1,10 +1,31 @@
 <!DOCTYPE html>
+<head>
+	<style>
+		body {
+			
+		}
+
+		.url {
+			font-family: monospace;
+		}
+
+		.container {
+			max-width: 700px;
+			margin: auto;
+		}
+	</style>
+</head>
 <html>
 	<body>
-		<h1>URL Shortener</h1>
-		<h4>How to use:</h4>
-		<p>Paste your URL into the address bar.</p>
-		<p>e.g. https://elliotjz-url-shortener.herokuapp.com/https://soundcloud.com/stream</p>
-		<p>A JSON object will be returned with a shortened URL that you can use to route you to your website.</p>
+		<div class='container'>
+			<h1>url-shortener</h1>
+			<h4>Usage:</h4>
+			<p class='url'>https://elliotjz-url-shortener.herokuapp.com/new/htts://codepen.io/elliotjz/</p>
+			<h4>Expected Response:</h4>
+			<p class='url'>{<br>"original_url": "https://codepen.io/elliotjz/",<br>"short_url": "https://elliotjz-url-shortener.herokuapp.com/34"<br>}</p>
+			<h4>To use the short url, navigae to:</h4>
+			<p class='url'>https://elliotjz-url-shortener.herokuapp.com/34</p>
+			<a href="https://elliotjz-url-shortener.herokuapp.com">Use the app</a>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,11 @@
+body {
+	text-align: center;
+}
+
+.url {
+	font-family: monospace;
+}
+
+.container {
+	max-width: 500px;
+}
