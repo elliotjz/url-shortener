@@ -28,10 +28,11 @@ module.exports = function(app) {
 				if (err) throw err;
 				let count = data.short_url;
 
-				let newUrl = { original_url: url, short_url: "https://elliotjz-url-shortener.herokuapp.com/" + count};
+				let newUrl = { original_url: url, short_url: count};
 				let newUrlDoc = UrlModel(newUrl).save(function(err, data) {
 					if (err) throw err;
-					res.json(newUrl);
+					res.json({original_url: newUrl.original_url,
+						short_url: "https://elliotjz-url-shortener.herokuapp.com/" + count});
 				});
 
 				// Increment counter
