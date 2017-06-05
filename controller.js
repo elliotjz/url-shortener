@@ -21,7 +21,7 @@ module.exports = function(app) {
 	app.get('/new/*', function(req, res) {
 		let url = req.url.slice(5);
 		console.log('');
-		console.log(req.originalUrl);
+		console.log(req.baseUrl);
 		console.log('');
 		let result;
 
