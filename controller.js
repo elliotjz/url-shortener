@@ -20,9 +20,6 @@ module.exports = function(app) {
 
 	app.get('/new/*', function(req, res) {
 		let url = req.url.slice(5);
-		console.log('');
-		console.log(req.baseUrl);
-		console.log('');
 		let result;
 
 		if (url.match(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/)) {
@@ -31,7 +28,7 @@ module.exports = function(app) {
 				if (err) throw err;
 				let count = data.short_url;
 
-				let newUrl = { original_url: url, short_url: count};
+				let newUrl = { original_url: url, short_url: req.baseUrl + count};
 				let newUrlDoc = UrlModel(newUrl).save(function(err, data) {
 					if (err) throw err;
 					res.json(newUrl);
